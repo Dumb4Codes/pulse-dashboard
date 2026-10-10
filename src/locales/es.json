@@ -1,0 +1,256 @@
+{
+  "nav": {
+    "label": "Navegación principal",
+    "feed": "Feed",
+    "trending": "Tendencias",
+    "favorites": "Favoritos",
+    "settings": "Ajustes"
+  },
+  "sidebar": {
+    "liveTitle": "En vivo",
+    "liveBody": "Las novedades llegan en cuanto ocurren."
+  },
+  "header": {
+    "search": "Buscar",
+    "searchHint": "Buscar noticias, películas, publicaciones"
+  },
+  "account": {
+    "menu": "Menú de la cuenta",
+    "profile": "Perfil",
+    "signOut": "Cerrar sesión",
+    "signingOut": "Cerrando sesión…",
+    "signOutError": "No se pudo cerrar la sesión. Inténtalo de nuevo."
+  },
+  "feed": {
+    "title": "Tu feed",
+    "subtitle": "Noticias, películas y publicaciones, en el orden que tú elijas.",
+    "empty": {
+      "title": "Aún no hay nada aquí",
+      "body": "Prueba a elegir más categorías o a borrar la búsqueda."
+    },
+    "error": {
+      "title": "No pudimos cargar tu feed",
+      "body": "Algo salió mal al obtener novedades. Revisa tu conexión e inténtalo de nuevo."
+    },
+    "retry": "Reintentar",
+    "loadingMore": "Cargando más…",
+    "partialError": "No se pudieron cargar algunos elementos.",
+    "dragHint": "Pulsa la flecha hacia arriba o hacia abajo para mover este elemento.",
+    "endReached": "Estás al día.",
+    "newItems_one": "{{count}} elemento nuevo",
+    "newItems_many": "{{count}} de elementos nuevos",
+    "newItems_other": "{{count}} elementos nuevos"
+  },
+  "card": {
+    "read": "Leer más",
+    "play": "Reproducir",
+    "view": "Ver publicación",
+    "favorite": "Añadir a favoritos",
+    "unfavorite": "Quitar de favoritos",
+    "drag": "Arrastrar para reordenar",
+    "newTab": "Se abre en una pestaña nueva",
+    "loading": "Cargando contenido…",
+    "type": {
+      "news": "Noticia",
+      "movie": "Película",
+      "social": "Publicación"
+    }
+  },
+  "detail": {
+    "back": "Volver",
+    "glance": "De un vistazo",
+    "score": "Puntuación de tendencia",
+    "scoreOf": "{{score}} de 100",
+    "scoreHint": "Cuanto más alta, más arriba aparece en Tendencias.",
+    "source": "Fuente",
+    "author": "Autor",
+    "published": "Publicado",
+    "link": "Enlace original",
+    "why": "Por qué lo ves",
+    "whyCategory": "Sigues {{category}}, por eso Pulse lo eligió para tu feed.",
+    "whyHashtag": "Menciona #{{tag}}, uno de tus hashtags.",
+    "whyOther": "{{category}} no está entre tus categorías. Añádela en Ajustes para ver más como esto.",
+    "openSettings": "Abrir ajustes",
+    "copyLink": "Copiar enlace",
+    "linkCopied": "Enlace copiado",
+    "copyFailed": "No se pudo copiar el enlace",
+    "related": "Más de {{category}}",
+    "notFound": {
+      "title": "No encontramos ese elemento",
+      "body": "Puede que ya no esté en tu feed, o que el enlace esté incompleto. Vuelve a tu feed para seguir explorando.",
+      "cta": "Volver a tu feed"
+    }
+  },
+  "trending": {
+    "title": "Tendencias",
+    "subtitle": "Las noticias, películas y publicaciones con mayor puntuación en tus categorías ahora mismo.",
+    "tabs": "Tendencias por tipo",
+    "news": "Noticias",
+    "movies": "Películas",
+    "posts": "Publicaciones",
+    "more": "También en alza",
+    "empty": {
+      "title": "Aún no hay tendencias",
+      "body": "Elige algunas categorías más y lo más popular aparecerá aquí.",
+      "cta": "Elegir categorías"
+    },
+    "error": {
+      "title": "No pudimos cargar las tendencias",
+      "body": "Algo salió mal al ordenar los elementos. Revisa tu conexión e inténtalo de nuevo."
+    }
+  },
+  "favorites": {
+    "title": "Favoritos",
+    "subtitle": "Todo lo que has guardado. Los favoritos se quedan aquí aunque salgan del feed.",
+    "count_one": "{{count}} elemento guardado",
+    "count_many": "{{count}} elementos guardados",
+    "count_other": "{{count}} elementos guardados",
+    "filterLabel": "Filtrar por tipo",
+    "all": "Todo",
+    "empty": {
+      "title": "Aún no tienes favoritos",
+      "body": "Toca el corazón de cualquier tarjeta para guardarla aquí.",
+      "cta": "Ver tu feed"
+    },
+    "emptyFilter": {
+      "title": "No hay nada guardado aquí",
+      "body": "Ninguno de tus favoritos coincide con este filtro.",
+      "cta": "Mostrar todo"
+    }
+  },
+  "settings": {
+    "title": "Ajustes",
+    "subtitle": "Ajusta Pulse a tu forma de leer. Todo se guarda sobre la marcha.",
+    "interests": "Intereses",
+    "interestsBody": "Elige qué aparece en tu feed y en la página de Tendencias.",
+    "categories": "Categorías",
+    "keepOneCategory": "Mantén al menos una categoría seleccionada.",
+    "hashtags": "Hashtags",
+    "hashtagsBody": "Las publicaciones con estos hashtags se incluyen en tu feed.",
+    "hashtagLabel": "Añadir un hashtag",
+    "hashtagPlaceholder": "p. ej. design",
+    "hashtagAdd": "Añadir",
+    "hashtagRemove": "Quitar #{{tag}}",
+    "hashtagList": "Tus hashtags",
+    "hashtagEmpty": "Aún no hay hashtags.",
+    "hashtagInvalid": "Usa de 1 a 30 letras, números o guiones bajos.",
+    "hashtagDuplicate": "#{{tag}} ya está en tu lista.",
+    "hashtagLimit": "Puedes seguir hasta {{max}} hashtags.",
+    "appearance": "Apariencia",
+    "appearanceBody": "Elige cómo se ve Pulse. «Sistema» sigue tu dispositivo.",
+    "theme": "Tema",
+    "language": "Idioma",
+    "languageBody": "Se aplica a los menús, etiquetas y mensajes de Pulse.",
+    "profile": "Perfil",
+    "profileBody": "Se muestra en la cabecera y en el menú de tu cuenta.",
+    "preview": "Vista previa",
+    "name": "Nombre visible",
+    "nameRequired": "Escribe un nombre visible.",
+    "nameTooLong": "Usa {{max}} caracteres o menos.",
+    "avatarColor": "Color del avatar",
+    "colors": {
+      "indigo": "Índigo",
+      "red": "Rojo",
+      "amber": "Ámbar",
+      "emerald": "Esmeralda",
+      "sky": "Cielo",
+      "violet": "Violeta",
+      "pink": "Rosa",
+      "slate": "Pizarra"
+    },
+    "saved": "Guardado"
+  },
+  "search": {
+    "placeholder": "Busca noticias, películas y publicaciones…",
+    "noResults": "Sin resultados para “{{query}}”",
+    "news": "Noticias",
+    "movies": "Películas",
+    "social": "Publicaciones",
+    "minChars": "Escribe al menos 2 caracteres para buscar.",
+    "title": "Buscar",
+    "close": "Cerrar búsqueda",
+    "resultsLabel": "Resultados de búsqueda",
+    "searching": "Buscando…",
+    "error": "La búsqueda no está disponible ahora. Revisa tu conexión e inténtalo de nuevo.",
+    "noResultsHint": "Revisa la ortografía o prueba con un término más amplio.",
+    "resultCount_one": "{{count}} resultado",
+    "resultCount_many": "{{count}} de resultados",
+    "resultCount_other": "{{count}} resultados",
+    "hint": {
+      "navigate": "Navegar",
+      "open": "Abrir"
+    }
+  },
+  "auth": {
+    "modeLabel": "Tipo de cuenta",
+    "login": "Iniciar sesión",
+    "signup": "Registrarse",
+    "loginTitle": "Te damos la bienvenida",
+    "loginSubtitle": "Inicia sesión y retoma tu feed donde lo dejaste.",
+    "loginPending": "Iniciando sesión…",
+    "signupTitle": "Crea tu cuenta",
+    "signupSubtitle": "Sirve cualquier correo. Esto es una demostración, no se guarda nada.",
+    "signupSubmit": "Crear cuenta",
+    "signupPending": "Creando la cuenta…",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "you@example.com",
+    "password": "Contraseña",
+    "passwordHint": "Al menos {{min}} caracteres.",
+    "showPassword": "Mostrar contraseña",
+    "hidePassword": "Ocultar contraseña",
+    "demoHeading": "¿Solo estás echando un vistazo?",
+    "demo": "Usar cuenta de demostración",
+    "demoFilled": "Credenciales de demostración rellenadas. Pulsa Iniciar sesión para continuar.",
+    "signedIn": "Sesión iniciada. Te llevamos a tu feed…",
+    "footnote": "Inicio de sesión simulado para la demostración. No se guarda ninguna cuenta.",
+    "invalid": "El correo y la contraseña no coinciden. Prueba la cuenta de demostración de abajo.",
+    "error": {
+      "emailRequired": "Introduce tu correo electrónico.",
+      "email": "Eso no parece un correo electrónico.",
+      "passwordRequired": "Introduce tu contraseña.",
+      "password": "Usa al menos {{min}} caracteres.",
+      "network": "No pudimos conectar con el servidor. Revisa tu conexión e inténtalo de nuevo.",
+      "server": "Algo salió mal por nuestra parte. Inténtalo de nuevo."
+    }
+  },
+  "hero": {
+    "about": "Acerca de Pulse",
+    "edition": "Edición personal",
+    "tagline": "Tu mundo,",
+    "taglineAccent": "a tu medida.",
+    "deck": "Noticias, películas y redes sociales en un solo feed tranquilo que puedes buscar, reordenar y hacer tuyo.",
+    "stats": {
+      "sources": "Fuentes",
+      "topics": "Temas",
+      "languages": "Idiomas"
+    },
+    "sample": {
+      "newsHeadline": "Los chips se hacen pequeños. Los modelos, enormes.",
+      "newsMeta": "Pulse Wire · 4 min de lectura",
+      "movieTitle": "La larga órbita",
+      "movieMeta": "Ciencia ficción · Película",
+      "postBody": "Lancé el modo oscuro en una tarde. Los tokens ganan a los códigos hex."
+    }
+  },
+  "theme": {
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema",
+    "toggle": "Modo oscuro"
+  },
+  "category": {
+    "technology": "Tecnología",
+    "sports": "Deportes",
+    "finance": "Finanzas",
+    "entertainment": "Entretenimiento",
+    "science": "Ciencia",
+    "health": "Salud",
+    "business": "Negocios"
+  },
+  "sr": {
+    "skipToContent": "Saltar al contenido",
+    "moved": "{{title}} movido a la posición {{pos}} de {{total}}",
+    "alreadyFirst": "{{title}} ya es el primero",
+    "alreadyLast": "{{title}} ya es el último"
+  }
+}

@@ -1,0 +1,233 @@
+@import "tailwindcss";
+
+/* Tailwind v4: class/attribute-driven dark variant (replaces the v3 `darkMode` config). */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ---------- Design tokens: light (default) ----------
+   `[data-theme="light"]` repeats the block so a light swatch can be drawn inside a dark page (and
+   vice versa with the dark block): Settings previews each theme by scoping it to an element. */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #FAF6EE;
+  --surface: #FFFFFF;
+  --surface-2: #F3EDE0;
+  --ink: #16181D;
+  --muted: #5B6070;
+  --line: #E4DCCB;
+  --accent: #E8452C;
+  --accent-2: #5B4BFF;
+  --accent-ink: #FFFFFF;
+  --ring: #5B4BFF;
+  --radius: 18px;
+  --shadow: 0 10px 30px -12px rgba(22, 24, 29, 0.25);
+  /* A card picked up by the pointer (drag-to-reorder): higher and softer than --shadow. */
+  --shadow-lift: 0 28px 48px -18px rgba(22, 24, 29, 0.38);
+}
+
+/* ---------- Design tokens: dark ---------- */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0B1020;
+  --surface: #131A2E;
+  --surface-2: #1A2340;
+  --ink: #EEF1FA;
+  --muted: #A3ABC4;
+  --line: #26304F;
+  --accent: #FF6B52;
+  --accent-2: #8B7DFF;
+  --accent-ink: #0B1020;
+  --ring: #A99FFF;
+  --shadow: 0 14px 34px -14px rgba(0, 0, 0, 0.7);
+  --shadow-lift: 0 30px 56px -18px rgba(0, 0, 0, 0.85);
+}
+
+/* ---------- Expose tokens as Tailwind utilities (bg-bg, text-ink, border-line, font-display, rounded-card, ...) ---------- */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  /* Legible glyph colour on a filled accent / accent-2 / accent-strong surface (white on light, ink-navy on dark). */
+  --color-accent-ink: var(--accent-ink);
+  /* Latin face first; the Devanagari face only serves glyphs the Latin face lacks (Hindi UI). */
+  --font-display: var(--font-fraunces), var(--font-devanagari);
+  --font-sans: var(--font-inter), var(--font-devanagari);
+  --radius-card: var(--radius);
+  /* Derived (no new hex): coral pulled toward ink so error text clears AA on both themes. */
+  --color-danger: color-mix(in oklab, var(--accent) 68%, var(--ink));
+  /* Coral deepened for display-size text on tinted surfaces: >=3:1 worst case on light, higher on dark. */
+  --color-accent-strong: color-mix(in oklab, var(--accent) 80%, var(--ink));
+}
+
+/* ---------- Motion tokens + CSS entrance keyframes (run without JS; neutralised under reduced motion) ---------- */
+@theme {
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-rise-sm: rise-sm 0.55s var(--ease-out-expo) both;
+  --animate-mask-up: mask-up 0.85s var(--ease-out-expo) both;
+  --animate-draw: draw 0.9s var(--ease-out-expo) both;
+  --animate-enter-left: enter-left 0.8s var(--ease-out-expo) both;
+  /* Details page hero photo: eases down from a slight zoom as the page arrives (backwards fill: no lingering transform). */
+  --animate-settle: settle 1.1s var(--ease-out-expo) backwards;
+  /* App shell: route change entrance (backwards fill: no lingering transform once settled). */
+  --animate-page-in: page-in 0.22s var(--ease-out-expo) backwards;
+  --animate-menu-in: menu-in 0.16s var(--ease-out-expo) backwards;
+  /* Live-status dot halo. The ring's resting state is opacity 0, so when the reduced-motion rule
+     collapses this to one 0.01ms iteration it ends invisible instead of stuck on screen. */
+  --animate-pulse-ring: pulse-ring 2.8s var(--ease-out-expo) infinite;
+  /* Search palette: the scrim fades, the panel drops in from just above its resting place (backwards fill: no lingering transform). */
+  --animate-scrim-in: scrim-in 0.2s ease-out backwards;
+  --animate-palette-in: palette-in 0.22s var(--ease-out-expo) backwards;
+
+  @keyframes scrim-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes palette-in {
+    from { opacity: 0; transform: translateY(-8px) scale(0.97); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes page-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes menu-in {
+    from { opacity: 0; transform: translateY(-4px) scale(0.97); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes pulse-ring {
+    0% { opacity: 0.55; transform: scale(1); }
+    70%, 100% { opacity: 0; transform: scale(2.6); }
+  }
+  @keyframes rise-sm {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes settle {
+    from { transform: scale(1.07); }
+    to { transform: none; }
+  }
+  @keyframes mask-up {
+    from { transform: translateY(108%); }
+    to { transform: none; }
+  }
+  @keyframes draw {
+    from { stroke-dashoffset: 1; }
+    to { stroke-dashoffset: 0; }
+  }
+  @keyframes enter-left {
+    from { opacity: 0; transform: translateX(24px); }
+    to { opacity: 1; transform: none; }
+  }
+}
+
+/* ---------- Base ---------- */
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-inter), var(--font-devanagari);
+}
+
+/* Subtle paper grain (radial noise, 4% opacity, never intercepts input). */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+
+/* Visible focus ring on every interactive element (WCAG 2.4.7). */
+:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* ---------- Glass surface (app shell: sidebar, header, mobile tab bar) ----------
+   Translucent surface token + backdrop blur. Falls back to a near-opaque surface where
+   backdrop-filter is unsupported, and to a fully opaque one under prefers-reduced-transparency. */
+@layer components {
+  .glass {
+    background: color-mix(in oklab, var(--surface) 70%, transparent);
+    -webkit-backdrop-filter: blur(18px) saturate(1.4);
+    backdrop-filter: blur(18px) saturate(1.4);
+    border: 1px solid color-mix(in oklab, var(--line) 70%, transparent);
+  }
+
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .glass {
+      background: color-mix(in oklab, var(--surface) 95%, transparent);
+    }
+  }
+
+  @media (prefers-reduced-transparency: reduce) {
+    .glass {
+      background: var(--surface);
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+  }
+
+  /* Floating panel (search palette): frostier than the shell glass, but dense enough to keep text AA over any page content. */
+  .glass-panel {
+    background: color-mix(in oklab, var(--surface) 88%, transparent);
+    -webkit-backdrop-filter: blur(24px) saturate(1.5);
+    backdrop-filter: blur(24px) saturate(1.5);
+    border: 1px solid color-mix(in oklab, var(--line) 80%, transparent);
+  }
+
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .glass-panel {
+      background: color-mix(in oklab, var(--surface) 98%, transparent);
+    }
+  }
+
+  @media (prefers-reduced-transparency: reduce) {
+    .glass-panel {
+      background: var(--surface);
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+  }
+}
+
+/* ---------- Skeleton shimmer ---------- */
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* In the components layer so a utility (`rounded-md`, `rounded-full`) can still override the default radius. */
+@layer components {
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--surface-2) 25%,
+      var(--line) 50%,
+      var(--surface-2) 75%
+    );
+    background-size: 200% 100%;
+    border-radius: var(--radius);
+    animation: shimmer 1.6s ease-in-out infinite;
+  }
+}
+
+/* ---------- Reduced motion: neutralise all animation/transition ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
