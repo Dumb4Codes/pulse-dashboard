@@ -1,4 +1,4 @@
-# Pulse (https://pulse-dashboard-ten-delta.vercel.app)
+# [Pulse](https://pulse-dashboard-ten-delta.vercel.app)
 
 **A personalized content dashboard that puts news, movie recommendations and social posts into one searchable, re-orderable, themeable feed.**
 
